@@ -10,6 +10,11 @@ import { Subscribe } from '~/components/subscribe';
 import { productCardTransformer } from '~/data-transformers/product-card-transformer';
 import { getPreferredCurrencyCode } from '~/lib/currency';
 import { getMetadataAlternates } from '~/lib/seo/canonical';
+{/* custom components for home page */}
+import CategoryProduct from './_components/home/category-products/category-product';
+import { BestsellerProducts } from './_components/home/bestseller-products/bestseller-products';
+import FBTSection from './_components/home/fbt/page';
+{/* custom components for home page */}
 
 import { Slideshow } from './_components/slideshow';
 import { getPageData } from './page-data';
@@ -162,6 +167,11 @@ export default async function Home({ params }: Props) {
      
       
       {/* test section end */}
+            {/* custom components for home page */}
+      <BestsellerProducts />
+      <CategoryProduct />
+      {/* <FBTSection /> */}
+      {/* custom components for home page */}
       
       <Stream fallback={null} value={streamableShowNewsletterSignup}>
         {(showNewsletterSignup) => showNewsletterSignup && <Subscribe />}
